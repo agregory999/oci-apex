@@ -8,6 +8,9 @@ resource "oci_database_autonomous_database" "apex_instance" {
 
   db_workload = "APEX"
 
+  # Private Subnet
+  subnet_id =  var.subnet_id
+  nsg_ids = var.nsg_ids
 }
 
 resource "random_string" "deploy_id" {
